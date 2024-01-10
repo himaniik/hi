@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f3c7c7;
+}
+
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 180px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden; /* Hide the message initially */
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #fff;
+    transform: translateX(-50%);
+}
+.btn{
+    position:absolute;
+    justify-content: center;
+    opacity: 1; /* Initially, make the message invisible */
+    margin:70px;
+    margin-left:80px;
+    background-color: pink;
+    border-radius:20px;
+    width:140px;
+    height:40px;
+    border:0;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.message {
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+    color: #333;
+    opacity: 0; /* Initially, make the message invisible */
+    transition: transform 0.5s ease; /* Add a smooth transition effect */
+    font-size: 26px;;
+}
+
+.envelope.open .message {
+    opacity: 1; /* Make the message visible when the envelope is open */
+}
+
+.envelope.open .btn{
+    opacity:0;
+}
